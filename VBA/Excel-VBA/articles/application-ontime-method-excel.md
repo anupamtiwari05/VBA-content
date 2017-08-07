@@ -52,6 +52,10 @@ This example runs my_Procedure 15 seconds from now.
 
 ```vb
 Application.OnTime Now + TimeValue("00:00:15"), "my_Procedure"
+
+Or
+
+Application.OnTime Now + TimeSerial(0,0,15), "my_Procedure"
 ```
 
 This example runs my_Procedure at 5 P.M.
@@ -61,6 +65,10 @@ This example runs my_Procedure at 5 P.M.
 
 ```vb
 Application.OnTime TimeValue("17:00:00"), "my_Procedure"
+
+Or
+
+Application.OnTime TimeSerial(17,0,0), "my_Procedure"
 ```
 
 This example cancels the  **OnTime** setting from the previous example.
@@ -70,6 +78,11 @@ This example cancels the  **OnTime** setting from the previous example.
 
 ```vb
 Application.OnTime EarliestTime:=TimeValue("17:00:00"), _ 
+ Procedure:="my_Procedure", Schedule:=False
+
+Or
+
+Application.OnTime EarliestTime:=TimeSerial(17,0,0), _ 
  Procedure:="my_Procedure", Schedule:=False
 ```
 
